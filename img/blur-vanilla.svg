@@ -1,0 +1,17 @@
+<svg fill="none" height="1133" viewBox="0 0 1920 1133" width="1920" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <linearGradient id="a">
+        <stop offset=".369792" stop-color="#e5d877"/>
+        <stop offset="1" stop-color="#e5d877" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="b" cx="0" cy="0" gradientTransform="matrix(0 566.358 -566.358 0 566.358 566.358)" gradientUnits="userSpaceOnUse" r="1" xlink:href="#a"/>
+    <radialGradient id="c" cx="0" cy="0" gradientTransform="matrix(0 351.45 -351.45 0 351.45 351.45)" gradientUnits="userSpaceOnUse" r="1" xlink:href="#a"/>
+    <clipPath id="d">
+        <path d="m0 0h1920v1133h-1920z"/>
+    </clipPath>
+    <g clip-path="url(#d)">
+        <g opacity=".8">
+            <path d="m0 0h1132.72v1132.72h-1132.72z" fill="url(#b)" opacity=".7" transform="matrix(1 .00066319 .00066319 -1 -511 1132.71)"/>
+            <path d="m0 0h702.901v702.901h-702.901z" fill="url(#c)" opacity=".99" transform="matrix(1 .00066319 .00066319 -1 208.633 888.152)"/>
+        </g>
+    </g>
+</svg>

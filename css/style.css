@@ -1,0 +1,705 @@
+/* ************* BASE STYLE ************* */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --light: #f3efea;
+    --dark: #1f1a18;
+    --dark-herbs: #7f7f58;
+    --herbs: #A3A380;
+    --herbs-translucid: #a3a380dd;
+    --vanilla: #D6CE93;
+    --cream: #EFEBCE;
+    --dark-bronze: #aa7d6b;
+    --bronze: #D8A48F;
+
+    --font-title:"Hubot Sans", sans-serif;
+    --font-body:"Google Sans Code", monospace;
+}
+
+/* ************* GLOBAL STYLES ************* */
+
+html{
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+}
+
+body{
+    scrollbar-width: 6px;
+    scrollbar-color: var(--vanilla) var(--dark-bronze);
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--vanilla);
+    margin-right: 2px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--dark-bronze);
+}
+
+body{
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+}
+
+body::selection{
+    color: var(--cream);
+    background-color: var(--bronze);
+}
+
+/* font awesome */
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+
+/* titles */
+
+h1, h2 {
+    font-family: var(--font-title);
+    font-optical-sizing: auto;
+}
+
+h2{
+    font-size: 4em;
+    padding-bottom:30px; 
+}
+
+/* buttons */
+
+button{
+    padding: 5px 20px;
+    min-width: 150px;
+    background-color: var(--dark-herbs);
+    color: white;
+    border-width:0px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all;
+    transition-duration: .5s;
+    margin-top: 30px;
+}
+
+button:hover{
+    letter-spacing: 0.1em;
+    transition: all;
+    transition-duration: .5s;
+    padding: 5px 80px;
+    cursor: pointer;
+}
+
+button:active{
+    background-color: var(--bronze);
+}
+
+/* ************* LOGO ************* */
+
+.logo{
+    color: var(--vanilla);
+    z-index: 100;
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5em;
+}
+
+.logo span{
+    background-color: var(--dark);
+    display: block;
+    width: 9ch;
+    white-space: nowrap;
+    animation: typing 2s steps(9), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+/* ************* NAVIGATION ************* */
+
+nav{
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+}
+
+.menu{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--herbs-translucid);
+    border-radius: 50px;
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--herbs);
+}
+.menu__element{
+    padding: 15px;
+}
+
+.menu__element a{
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.menu__element a:hover{
+    color: var(--vanilla);
+    text-decoration: none;
+    text-decoration: line-through;
+}
+
+/* ************* SECTIONS ************* */
+
+/* global hero sections */
+
+.hero{
+    height: 100vh;
+    text-align: center;
+}
+
+/* ------------ STYLES WELCOME ------------ */
+
+#welcome{
+    background-color: var(--bronze);
+    background-image: url("/img/miniangela1.jpg");
+    background-size: cover;
+    background-position:center;
+    background-blend-mode:multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome h1{
+    font-weight: 900;
+    line-height:0.7em;
+    font-size: 18vw;
+    letter-spacing: -0.17em;
+    color: var(--cream);
+    min-height: 160px;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: smooth;
+}
+
+#welcome h1:hover{
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    transition-behavior: smooth;
+    font-size: 10vw;
+    font-weight: 100;
+    letter-spacing: 0.7em;
+    padding-left: 0.7em;
+    cursor:none;
+}
+
+.greeting{
+    width: 100%;
+    background-color: var(--bronze);
+    position: relative;
+    height: 600px;
+}
+
+.greeting .deco{
+    position: absolute;
+    font-size: 13em;
+    top: -50px;
+    right: 15%;
+    animation-name: fade;
+    view-timeline-name: --deco;
+    view-timeline-axis: block;
+    animation-timeline: --deco;
+    animation-range: entry 15% cover 40%;
+    animation-fill-mode: both;
+    rotate: 10deg;
+}
+
+.intro {
+    position: relative;
+    top: 80px;
+    left: 100px;
+    width: 380px;
+    background-color: var(--cream);
+    opacity: 0.8;
+}
+
+.intro p{
+    font-size: 1.5em;
+    color: var(--dark);
+    text-align: left;
+}
+
+#signature{
+    padding: 0px 30px 50px 30%;
+    margin-top: -10em;
+}
+
+path{
+    fill: none;
+    stroke: var(--dark);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.stroke1{
+    stroke-dasharray:990;
+    animation: write1 2s ease-in-out;
+    view-timeline-name: --greeting;
+    view-timeline-axis: block;
+    animation-timeline: --greeting;
+    animation-range: entry 35% cover 60%;
+    animation-fill-mode: both;
+}
+
+.stroke2{
+    stroke-dasharray:5;
+    animation: write2 2s ease-in-out;
+    view-timeline-name: --greeting;
+    view-timeline-axis: block;
+    animation-timeline: --greeting;
+    animation-range: entry 90% cover 100%;
+}
+
+.stroke3{
+    stroke-dasharray:10;
+    animation: write3 2s ease-in-out;
+    view-timeline-name: --greeting;
+    view-timeline-axis: block;
+    animation-timeline: --greeting;
+    animation-range: entry 74% cover 88%;
+}
+
+/* ------------ STYLES WHAT'S UP? ------------ */
+
+.blur{
+    background-color: var(--cream);
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/img/blur-vanilla.svg");
+    background-size: cover;
+    background-position:center;
+}
+
+#whatsup h2{
+    animation-name: fade, move;
+    view-timeline-name: --title;
+    view-timeline-axis: block;
+    animation-timeline: --title;
+    animation-range: entry 30% cover 60%;
+    animation-fill-mode: both;
+    color: var(--dark);
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.cta__text{
+    color: var(--dark-herbs);
+    letter-spacing: 0.05em;
+    line-height: 1.5em;
+    padding-bottom: 0.8em;
+}
+
+.cta__button span::before{
+    content: "\f075";
+    padding-right: 5px;
+    font-family: "Font Awesome 5 Free";
+    color: var(--light);
+}
+
+/* ------------ STYLES ANIMATED TEXT ------------ */
+
+.x-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 16px;
+    background-color: var(--herbs);
+}
+
+.x-scroll div:nth-child(even){
+    font-weight: bold;
+}
+
+.x-scroll__item {
+    font-family: var(--font-title);
+    line-height: 0.8em;
+    font-size: 2em;
+    color: var(--light);
+    flex-shrink: 0;
+    width: fit-content;
+    text-align: center;
+}
+
+/* ------------ STYLES TAKE A LOOK ------------ */
+
+#look{
+    background-color: var(--bronze);
+    background-size:cover;
+    background-position: fixed;
+    background-position:top;
+    background-blend-mode:lighten;
+    min-height: 100vh;
+    padding: 5%;
+}
+
+#look h2{
+    color: var(--dark);
+    animation-name: fade, move;
+    view-timeline-name: --title;
+    view-timeline-axis: block;
+    animation-timeline: --title;
+    animation-range: entry 30% cover 60%;
+    animation-fill-mode: both;
+    text-align: center;
+}
+
+#look .cta__text{
+    color: var(--cream);
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* gallery */
+
+.gallery__item{
+    overflow: hidden; 
+    transition: transform 0.4s ease-out;
+    filter:contrast(90%);
+    border-radius: 8px;
+    mix-blend-mode:multiply;
+    filter: grayscale();
+}
+
+.gallery__item span{
+    color: var(--bronze);
+    font-size: smaller;
+}
+
+.gallery__item:nth-child(even):hover{
+    transform: scale(1.5) rotate(3deg);
+}
+
+.gallery__item:hover {
+    transform: scale(1.5) rotate(-8deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    filter:none;
+    z-index: 11;
+    mix-blend-mode:normal;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-out;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.15);
+}
+
+/* ------------ STYLES LET'S CONNECT ------------ */
+
+#connect h2{
+    color: var(--dark);
+    animation-name: fade, move;
+    view-timeline-name: --title;
+    view-timeline-axis: block;
+    animation-timeline: --title;
+    animation-range: entry 30% cover 60%;
+    animation-fill-mode: both;
+    text-align: center;
+}
+
+#connect{
+    background-color: var(--vanilla);
+    background-image: url("/img/lined_paper.png");
+    background-size:auto;
+    background-blend-mode:multiply;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* form */
+
+#contact{
+    rotate: -2deg;
+    transition: all 1s ease-in-out;
+}
+
+#contact:hover{
+    rotate: 0deg;
+    transition: all 1s ease-in-out;
+}
+
+form{
+    background-color: var(--cream);
+    min-width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px; 
+    padding: 50px;
+}
+
+hr{
+    border-top: 1px solid var(--vanilla);
+    margin: 20px 0px;
+    grid-column: 1 / 3;
+}
+
+label {
+    font-size: .8em;
+    text-align: left;
+    grid-column: 1 / 2;
+    color: var(--dark-herbs);
+    box-shadow: none;
+}
+input, textarea {
+    grid-column: 2 / 3;
+    background-color: var(--light);
+    color: var(--dark-herbs);
+    border: 1px solid var(--vanilla);
+    box-shadow: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+input::placeholder, textarea::placeholder{
+    color: var(--herbs);
+}
+input:active, input:focus-visible, textarea:active, textarea:focus-visible{
+    border: 1px solid var(--herbs);
+    outline: none;
+    outline-offset: 0px;
+}
+#contact button {
+    grid-column: 1 / 3;
+}
+
+/* ************* FOOTER ************* */
+
+.social{
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1em;
+    color: var(--cream);
+    background-color: var(--herbs-translucid);
+    border: 1px solid var(--herbs);
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social a{
+    color: var(--cream);
+}
+
+.social:hover{
+    transition: all 0.2s ease-in-out;
+    scale: 0.9;
+    cursor: pointer;
+}
+
+.totop{
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    bottom: 90px;
+    right: 40px;
+    font-size: 1em;
+    color: var(--cream);
+    background-color: var(--herbs-translucid);
+    border: 1px solid var(--herbs);
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.totop a{
+    color: var(--cream);
+}
+
+.totop:hover{
+    transition: all 0.2s ease-in-out;
+    scale: 0.9;
+    cursor: pointer;
+}
+
+.me{
+    display: flex;
+    justify-content: center;
+    margin-top: -52px;
+    margin-bottom: -53px;
+    animation-name: fade;
+    view-timeline-name: --img;
+    view-timeline-axis: block;
+    animation-timeline: --img;
+    animation-range: entry 30% cover 35%;
+    animation-fill-mode: both;
+}
+
+.me img{
+    width: 100px;
+    clip-path: circle();
+}
+
+.thnks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 120px;
+    background-color: #1f1a18;
+}
+
+.thnks p{
+    color: var(--herbs);
+    font-size: 1.5vw;
+    letter-spacing: 1em;
+    margin-top: 100px;
+    padding-left: 1em;
+    border: 0.2em dotted transparent;
+}
+.thnks p:hover{
+    border: 0.2em dotted var(--bronze);
+    transition: 0.5s;
+}
+
+/* ************* ANIMATIONS ************* */
+
+
+@keyframes typing {
+    from { width: 0;}
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@keyframes write1 {
+    0% {
+        stroke-dashoffset: -990;
+    }
+    65% {
+        stroke-dashoffset: -0;
+    }
+}
+
+@keyframes write2 {
+    0%, 70% {
+        stroke-dashoffset: 5;
+    }
+    85% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes write3 {
+    0%, 90% {
+        stroke-dashoffset: 10;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        translate:-300px;
+    }
+    to {
+       translate:0;
+    }
+}
+
+/* ************* MEDIA QUERIES ************* */
+
+@media screen and (min-width: 1721px) and (max-width: 1920px) {
+    div#signature {
+    padding: 80px 10% 50px 40%;
+    }
+}
+
+@media screen and (min-width:1281px) and (max-width: 1720px) {
+    #signature {
+        margin-top: -7em;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1280px) {
+    #signature {
+        margin-top: -5em;
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1000px) {
+    #signature {
+        padding: 80px 30px 0px 30%;
+        margin-top: 2em;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    #signature {
+        padding: 80px 30px 0px 30%;
+        margin-top: 0;
+    }
+    .greeting .deco {
+        position: absolute;
+        font-size: 10em;
+        right: 10%;
+    }
+    .intro {
+        position: relative;
+        top: 43px;
+        left: 43px;
+    }
+}
