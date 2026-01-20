@@ -1,5 +1,4 @@
-
-# Proyecto Entorno Cliente 01
+# Proyecto Diseño de Interfaces 01
 
 Este proyecto es una onepage estática frontend que incluye una estructura sencilla de HTML, CSS y JavaScript. El proyecto se organiza con una página principal, estilos CSS y un script para animar elementos del DOM.
 
